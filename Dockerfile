@@ -1,13 +1,111 @@
-FROM archlinux:20200306
+FROM archlinux:20200505
 
 LABEL authors="Hansruedi Patzen"
 
 ENV PATH="${PATH}:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 
-RUN ["pacman", "-Syy", "--noconfirm"]
-RUN ["pacman", "-S", "--noconfirm", "texlive-most"]
-RUN ["pacman", "-S", "--noconfirm", "biber"]
-RUN ["pacman", "-S", "--noconfirm", "ghostscript"]
-RUN ["pacman", "-S", "--noconfirm", "cmake", "make"]
-RUN ["pacman", "-Sc", "--noconfirm"]
+RUN pacman -Syy \
+  && pacman -Sq --noconfirm \
+    texlive-most \
+    biber \
+    ghostscript \
+    adobe-source-code-pro-fonts \
+    adobe-source-han-sans-cn-fonts \
+    adobe-source-han-sans-hk-fonts \
+    adobe-source-han-sans-jp-fonts \
+    adobe-source-han-sans-kr-fonts \
+    adobe-source-han-sans-otc-fonts \
+    adobe-source-han-sans-tw-fonts \
+    adobe-source-han-serif-cn-fonts \
+    adobe-source-han-serif-jp-fonts \
+    adobe-source-han-serif-kr-fonts \
+    adobe-source-han-serif-otc-fonts \
+    adobe-source-han-serif-tw-fonts \
+    adobe-source-sans-pro-fonts \
+    adobe-source-serif-pro-fonts \
+    awesome-terminal-fonts \
+    bdf-unifont \
+    cantarell-fonts \
+    dina-font \
+    font-bh-ttf \
+    font-bitstream-speedo \
+    font-mathematica \
+    gentium-plus-font \
+    gnu-free-fonts \
+    gsfonts \
+    inter-font \
+    noto-fonts \
+    noto-fonts-cjk \
+    noto-fonts-emoji \
+    noto-fonts-extra \
+    opendesktop-fonts \
+    otf-cormorant \
+    otf-fantasque-sans-mono \
+    otf-fira-code \
+    otf-fira-mono \
+    otf-fira-sans \
+    otf-font-awesome \
+    otf-ipaexfont \
+    otf-ipafont \
+    otf-ipamjfont \
+    otf-latin-modern \
+    otf-latinmodern-math \
+    otf-overpass \
+    powerline-fonts \
+    tamsyn-font \
+    terminus-font \
+    terminus-font-otb \
+    tex-gyre-fonts \
+    ttf-anonymous-pro \
+    ttf-arphic-ukai \
+    ttf-arphic-uming \
+    ttf-baekmuk \
+    ttf-bitstream-vera \
+    ttf-caladea \
+    ttf-carlito \
+    ttf-cascadia-code \
+    ttf-cormorant \
+    ttf-croscore \
+    ttf-dejavu \
+    ttf-droid \
+    ttf-fantasque-sans-mono \
+    ttf-fira-code \
+    ttf-fira-mono \
+    ttf-fira-sans \
+    ttf-font-awesome \
+    ttf-hack \
+    ttf-hanazono \
+    ttf-hannom \
+    ttf-ibm-plex \
+    ttf-inconsolata \
+    ttf-indic-otf \
+    ttf-ionicons \
+    ttf-jetbrains-mono \
+    ttf-joypixels \
+    ttf-junicode \
+    ttf-khmer \
+    ttf-lato \
+    ttf-liberation \
+    ttf-linux-libertine \
+    ttf-linux-libertine-g \
+    ttf-nerd-fonts-symbols \
+    ttf-opensans \
+    ttf-proggy-clean \
+    ttf-roboto \
+    ttf-roboto-mono \
+    ttf-sazanami \
+    ttf-tibetan-machine \
+    ttf-ubuntu-font-family \
+    wqy-bitmapfont \
+    wqy-microhei \
+    wqy-microhei-lite \
+    wqy-zenhei \
+    xorg-fonts-100dpi \
+    xorg-fonts-75dpi \
+    xorg-fonts-cyrillic \
+    xorg-fonts-misc \
+    xorg-fonts-type1 \
+    cmake \
+    make \
+  && pacman -Scc --noconfirm
 

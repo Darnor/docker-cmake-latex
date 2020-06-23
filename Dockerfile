@@ -1,4 +1,4 @@
-FROM archlinux:20200505
+FROM archlinux:20200605
 
 LABEL authors="Hansruedi Patzen"
 
@@ -9,6 +9,7 @@ RUN pacman -Syy \
     texlive-most \
     biber \
     ghostscript \
+    imagemagick \
     adobe-source-code-pro-fonts \
     adobe-source-han-sans-cn-fonts \
     adobe-source-han-sans-hk-fonts \
@@ -41,7 +42,6 @@ RUN pacman -Syy \
     opendesktop-fonts \
     otf-cormorant \
     otf-fantasque-sans-mono \
-    otf-fira-code \
     otf-fira-mono \
     otf-fira-sans \
     otf-font-awesome \
